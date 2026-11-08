@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>Form</class>
+  <widget class="QWidget" name="Form">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>530</width>
+        <height>480</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>Управление врачом</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+        <widget class="QLabel" name="title">
+          <property name="text">
+            <string>Карточка врача</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="login_caption">
+          <property name="text">
+            <string>Логин (для нового врача)</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="login" />
+      </item>
+      <item>
+        <widget class="QLabel" name="password_caption">
+          <property name="text">
+            <string>Пароль (для нового врача обязателен)</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="password" />
+      </item>
+      <item>
+        <widget class="QLabel" name="name_caption">
+          <property name="text">
+            <string>ФИО</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="name" />
+      </item>
+      <item>
+        <widget class="QLabel" name="phone_caption">
+          <property name="text">
+            <string>Телефон</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLineEdit" name="phone"><property name="placeholderText"><string>+7 999 123-45-67</string></property></widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="specialization_caption">
+          <property name="text">
+            <string>Специальность</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="specialization" />
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="actions_layout">
+          <item>
+            <widget class="QPushButton" name="save">
+              <property name="text">
+                <string>Сохранить</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="back">
+              <property name="text">
+                <string>Отмена</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+  <resources />
+  <connections />
+</ui>

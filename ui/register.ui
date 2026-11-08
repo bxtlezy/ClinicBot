@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>520</width><height>620</height></rect></property>
+  <property name="minimumSize"><size><width>480</width><height>580</height></size></property>
+  <property name="windowTitle"><string>Поликлиника · Регистрация</string></property>
+  <layout class="QVBoxLayout" name="root">
+   <property name="leftMargin"><number>32</number></property>
+   <property name="topMargin"><number>24</number></property>
+   <property name="rightMargin"><number>32</number></property>
+   <property name="bottomMargin"><number>26</number></property>
+   <property name="spacing"><number>7</number></property>
+   <item><widget class="QLabel" name="title"><property name="text"><string>Регистрация</string></property><property name="styleSheet"><string>font-size: 24px; font-weight: 700; color: #174E6E;</string></property></widget></item>
+   <item><widget class="QLabel" name="intro"><property name="text"><string>Создайте аккаунт для записи на приём</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>color: #687E90; padding-bottom: 8px;</string></property></widget></item>
+   <item><widget class="QLabel" name="login_caption"><property name="text"><string>Логин *</string></property></widget></item>
+   <item><widget class="QLineEdit" name="login"><property name="placeholderText"><string>Придумайте логин</string></property><property name="minimumSize"><size><width>0</width><height>38</height></size></property></widget></item>
+   <item><widget class="QLabel" name="login_error"><property name="text"><string>Введите логин</string></property><property name="visible"><bool>false</bool></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><widget class="QLabel" name="password_caption"><property name="text"><string>Пароль *</string></property></widget></item>
+   <item><widget class="QLineEdit" name="password"><property name="placeholderText"><string>Минимум 8 символов</string></property><property name="minimumSize"><size><width>0</width><height>38</height></size></property></widget></item>
+   <item><widget class="QLabel" name="password_error"><property name="text"><string>Введите пароль</string></property><property name="visible"><bool>false</bool></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><layout class="QHBoxLayout" name="password_actions">
+    <item><widget class="QPushButton" name="generatePassword"><property name="text"><string>Сгенерировать надёжный пароль</string></property></widget></item>
+    <item><widget class="QPushButton" name="copyPassword"><property name="text"><string>Копировать</string></property></widget></item>
+   </layout></item>
+   <item><widget class="QCheckBox" name="showPassword"><property name="text"><string>Показать пароль</string></property></widget></item>
+   <item><widget class="QLabel" name="password_hint"><property name="text"><string>Сохраните пароль: он понадобится для следующих входов.</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>color: #687E90; font-size: 11px;</string></property></widget></item>
+   <item><widget class="QLabel" name="name_caption"><property name="text"><string>ФИО *</string></property></widget></item>
+   <item><widget class="QLineEdit" name="name"><property name="placeholderText"><string>Фамилия, имя, отчество</string></property><property name="minimumSize"><size><width>0</width><height>38</height></size></property></widget></item>
+   <item><widget class="QLabel" name="name_error"><property name="text"><string>Введите ФИО</string></property><property name="visible"><bool>false</bool></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><widget class="QLabel" name="phone_caption"><property name="text"><string>Телефон *</string></property></widget></item>
+   <item><widget class="QLineEdit" name="phone"><property name="placeholderText"><string>+7 999 123-45-67</string></property><property name="minimumSize"><size><width>0</width><height>38</height></size></property></widget></item>
+   <item><widget class="QLabel" name="phone_error"><property name="text"><string>Введите 10 цифр после +7</string></property><property name="visible"><bool>false</bool></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><widget class="QLabel" name="form_error"><property name="text"><string>Не все обязательные поля заполнены.</string></property><property name="visible"><bool>false</bool></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><spacer name="verticalSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>7</height></size></property></spacer></item>
+   <item><layout class="QHBoxLayout" name="actions_layout">
+    <item><widget class="QPushButton" name="save"><property name="text"><string>Зарегистрироваться</string></property><property name="minimumSize"><size><width>0</width><height>42</height></size></property></widget></item>
+    <item><widget class="QPushButton" name="back"><property name="text"><string>Назад</string></property><property name="minimumSize"><size><width>0</width><height>42</height></size></property></widget></item>
+   </layout></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

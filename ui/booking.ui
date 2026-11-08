@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>Form</class>
+  <widget class="QWidget" name="Form">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>630</width>
+        <height>750</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>Запись на приём</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+        <widget class="QLabel" name="title">
+          <property name="text">
+            <string>Новая запись к врачу</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="patient_caption">
+          <property name="text">
+            <string>Пациент</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="patient" />
+      </item>
+      <item>
+        <widget class="QLabel" name="complaints_caption">
+          <property name="text">
+            <string>Жалобы (необязательно)</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QTextEdit" name="complaints" />
+      </item>
+      <item>
+        <widget class="QPushButton" name="suggest">
+          <property name="text">
+            <string>Подобрать специальность по симптомам</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="specialization_caption">
+          <property name="text">
+            <string>Специальность</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="specialization" />
+      </item>
+      <item>
+        <widget class="QLabel" name="doctor_caption">
+          <property name="text">
+            <string>Врач</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="doctor" />
+      </item>
+      <item>
+        <widget class="QCalendarWidget" name="calendar" />
+      </item>
+      <item>
+        <widget class="QLabel" name="slot_caption">
+          <property name="text">
+            <string>Свободное время</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QComboBox" name="slot" />
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="actions_layout">
+          <item>
+            <widget class="QPushButton" name="save">
+              <property name="text">
+                <string>Записаться</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="back">
+              <property name="text">
+                <string>Отмена</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+  <resources />
+  <connections />
+</ui>

@@ -1,0 +1,778 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+  <class>Form</class>
+  <widget class="QWidget" name="Form">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1180</width>
+        <height>775</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>Поликлиника · Кабинет</string>
+    </property>
+    <layout class="QHBoxLayout" name="root">
+      <property name="leftMargin">
+        <number>0</number>
+      </property>
+      <property name="topMargin">
+        <number>0</number>
+      </property>
+      <property name="rightMargin">
+        <number>0</number>
+      </property>
+      <property name="bottomMargin">
+        <number>0</number>
+      </property>
+      <property name="spacing">
+        <number>0</number>
+      </property>
+      <item>
+        <widget class="QFrame" name="sidebar">
+          <property name="styleSheet">
+            <string>QFrame#sidebar { background: #163E59; border: none; }</string>
+          </property>
+          <property name="minimumSize">
+            <size>
+              <width>235</width>
+              <height>0</height>
+            </size>
+          </property>
+          <layout class="QVBoxLayout" name="sidebarLayout">
+            <property name="leftMargin">
+              <number>18</number>
+            </property>
+            <property name="topMargin">
+              <number>18</number>
+            </property>
+            <property name="rightMargin">
+              <number>18</number>
+            </property>
+            <property name="bottomMargin">
+              <number>18</number>
+            </property>
+            <property name="spacing">
+              <number>12</number>
+            </property>
+            <item>
+              <widget class="QLabel" name="logo">
+                <property name="text">
+                  <string>✚  Поликлиника</string>
+                </property>
+                <property name="styleSheet">
+                  <string>color: white; font-weight: 800; font-size: 20px;</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QLabel" name="subtitle">
+                <property name="text">
+                  <string>Электронная регистратура</string>
+                </property>
+                <property name="styleSheet">
+                  <string>color: #B7D2E1; font-size: 12px;</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="navHome">
+                <property name="text">
+                  <string>⌂   Обзор</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>43</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="navAppointments">
+                <property name="text">
+                  <string>▤   Записи на приём</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>43</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="navReviews">
+                <property name="text">
+                  <string>☆   Отзывы</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>43</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="navDoctors">
+                <property name="text">
+                  <string>♧   Врачи</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>43</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <spacer name="sideSpace">
+                <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                  <size>
+                    <width>20</width>
+                    <height>40</height>
+                  </size>
+                </property>
+              </spacer>
+            </item>
+            <item>
+              <widget class="QLabel" name="sideNote">
+                <property name="text">
+                  <string>Локальная версия</string>
+                </property>
+                <property name="styleSheet">
+                  <string>color: #B7D2E1; font-size: 11px;</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="changePassword">
+                <property name="text">
+                  <string>Изменить пароль</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>36</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QPushButton" name="switch">
+                <property name="text">
+                  <string>Выйти из аккаунта</string>
+                </property>
+                <property name="minimumSize">
+                  <size>
+                    <width>0</width>
+                    <height>36</height>
+                  </size>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </widget>
+      </item>
+      <item>
+        <widget class="QWidget" name="content">
+          <layout class="QVBoxLayout" name="mainLayout">
+            <property name="leftMargin">
+              <number>24</number>
+            </property>
+            <property name="topMargin">
+              <number>24</number>
+            </property>
+            <property name="rightMargin">
+              <number>24</number>
+            </property>
+            <property name="bottomMargin">
+              <number>24</number>
+            </property>
+            <property name="spacing">
+              <number>18</number>
+            </property>
+            <item>
+              <layout class="QHBoxLayout" name="header">
+                <item>
+                  <layout class="QVBoxLayout" name="headerText">
+                    <item>
+                      <widget class="QLabel" name="welcome">
+                        <property name="text">
+                          <string>Пользователь</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-size: 23px; font-weight: 750; color: #18354D;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QLabel" name="roleName">
+                        <property name="text">
+                          <string>Пациент</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-size: 13px; color: #688196;</string>
+                        </property>
+                      </widget>
+                    </item>
+                  </layout>
+                </item>
+                <item>
+                  <widget class="QPushButton" name="refresh">
+                    <property name="text">
+                      <string>↻  Обновить</string>
+                    </property>
+                    <property name="minimumSize">
+                      <size>
+                        <width>105</width>
+                        <height>0</height>
+                      </size>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QStackedWidget" name="pages">
+                <widget class="QWidget" name="pageOverview">
+                  <layout class="QVBoxLayout" name="overviewLayout">
+                    <property name="leftMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="spacing">
+                      <number>18</number>
+                    </property>
+                    <item>
+                      <widget class="QLabel" name="overviewTitle">
+                        <property name="text">
+                          <string>Обзор записей</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-weight: 750; font-size: 20px; color: #18354D;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QLabel" name="overviewHint">
+                        <property name="text">
+                          <string>Здесь отображаются ваши текущие показатели и быстрые действия.</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>color: #667F91;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="statsRow">
+                        <property name="spacing">
+                          <number>12</number>
+                        </property>
+                        <item>
+                          <widget class="QFrame" name="stat0">
+                            <property name="minimumSize">
+                              <size>
+                                <width>0</width>
+                                <height>124</height>
+                              </size>
+                            </property>
+                            <property name="styleSheet">
+                              <string>QFrame { background: white; border: 1px solid #E0E8EF; border-radius: 12px; } QLabel { background: transparent; border: none; }</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="statLayout0">
+                              <property name="leftMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="topMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="rightMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="bottomMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="spacing">
+                                <number>7</number>
+                              </property>
+                              <item>
+                                <widget class="QLabel" name="statLabel0">
+                                  <property name="text">
+                                    <string>Всего записей</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>color: #70879B; font-size: 13px;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item>
+                                <widget class="QLabel" name="totalValue">
+                                  <property name="text">
+                                    <string>0</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>font-weight: 800; font-size: 30px; color: #176B99;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QFrame" name="stat1">
+                            <property name="minimumSize">
+                              <size>
+                                <width>0</width>
+                                <height>124</height>
+                              </size>
+                            </property>
+                            <property name="styleSheet">
+                              <string>QFrame { background: white; border: 1px solid #E0E8EF; border-radius: 12px; } QLabel { background: transparent; border: none; }</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="statLayout1">
+                              <property name="leftMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="topMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="rightMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="bottomMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="spacing">
+                                <number>7</number>
+                              </property>
+                              <item>
+                                <widget class="QLabel" name="statLabel1">
+                                  <property name="text">
+                                    <string>Актуальные</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>color: #70879B; font-size: 13px;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item>
+                                <widget class="QLabel" name="activeValue">
+                                  <property name="text">
+                                    <string>0</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>font-weight: 800; font-size: 30px; color: #176B99;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QFrame" name="stat2">
+                            <property name="minimumSize">
+                              <size>
+                                <width>0</width>
+                                <height>124</height>
+                              </size>
+                            </property>
+                            <property name="styleSheet">
+                              <string>QFrame { background: white; border: 1px solid #E0E8EF; border-radius: 12px; } QLabel { background: transparent; border: none; }</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="statLayout2">
+                              <property name="leftMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="topMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="rightMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="bottomMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="spacing">
+                                <number>7</number>
+                              </property>
+                              <item>
+                                <widget class="QLabel" name="statLabel2">
+                                  <property name="text">
+                                    <string>На сегодня</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>color: #70879B; font-size: 13px;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item>
+                                <widget class="QLabel" name="todayValue">
+                                  <property name="text">
+                                    <string>0</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>font-weight: 800; font-size: 30px; color: #176B99;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QFrame" name="stat3">
+                            <property name="minimumSize">
+                              <size>
+                                <width>0</width>
+                                <height>124</height>
+                              </size>
+                            </property>
+                            <property name="styleSheet">
+                              <string>QFrame { background: white; border: 1px solid #E0E8EF; border-radius: 12px; } QLabel { background: transparent; border: none; }</string>
+                            </property>
+                            <layout class="QVBoxLayout" name="statLayout3">
+                              <property name="leftMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="topMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="rightMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="bottomMargin">
+                                <number>13</number>
+                              </property>
+                              <property name="spacing">
+                                <number>7</number>
+                              </property>
+                              <item>
+                                <widget class="QLabel" name="statLabel3">
+                                  <property name="text">
+                                    <string>Отзывы</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>color: #70879B; font-size: 13px;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                              <item>
+                                <widget class="QLabel" name="reviewsValue">
+                                  <property name="text">
+                                    <string>0</string>
+                                  </property>
+                                  <property name="styleSheet">
+                                    <string>font-weight: 800; font-size: 30px; color: #176B99;</string>
+                                  </property>
+                                </widget>
+                              </item>
+                            </layout>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                    <item>
+                      <widget class="QLabel" name="quickTitle">
+                        <property name="text">
+                          <string>Быстрые действия</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-weight: 700; font-size: 18px;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="quickRow">
+                        <property name="spacing">
+                          <number>12</number>
+                        </property>
+                        <item>
+                          <widget class="QPushButton" name="homeBook">
+                            <property name="text">
+                              <string>+   Записаться к врачу</string>
+                            </property>
+                            <property name="minimumSize">
+                              <size>
+                                <width>205</width>
+                                <height>46</height>
+                              </size>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                    <item>
+                      <spacer name="bottomOverview">
+                        <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                          <size>
+                            <width>20</width>
+                            <height>40</height>
+                          </size>
+                        </property>
+                      </spacer>
+                    </item>
+                  </layout>
+                </widget>
+                <widget class="QWidget" name="pageVisits">
+                  <layout class="QVBoxLayout" name="visitsLayout">
+                    <property name="leftMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="spacing">
+                      <number>13</number>
+                    </property>
+                    <item>
+                      <widget class="QLabel" name="visitsTitle">
+                        <property name="text">
+                          <string>Записи на приём</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-weight: 750; font-size: 20px;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QLineEdit" name="search">
+                        <property name="placeholderText">
+                          <string>Поиск по пациенту, врачу, дате или статусу</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QTableWidget" name="appointments">
+                        <property name="sortingEnabled">
+                          <bool>false</bool>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="visitActions1">
+                        <property name="spacing">
+                          <number>8</number>
+                        </property>
+                        <item>
+                          <widget class="QPushButton" name="book">
+                            <property name="text">
+                              <string>+ Записаться</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="cancel">
+                            <property name="text">
+                              <string>Отменить</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="rate">
+                            <property name="text">
+                              <string>Оценить врача</string>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="visitActions2">
+                        <property name="spacing">
+                          <number>8</number>
+                        </property>
+                        <item>
+                          <widget class="QPushButton" name="attended">
+                            <property name="text">
+                              <string>Отметить явку</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="note">
+                            <property name="text">
+                              <string>Заметка</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="redirect">
+                            <property name="text">
+                              <string>Перенаправить</string>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                  </layout>
+                </widget>
+                <widget class="QWidget" name="pageReviews">
+                  <layout class="QVBoxLayout" name="reviewsLayout">
+                    <property name="leftMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="spacing">
+                      <number>13</number>
+                    </property>
+                    <item>
+                      <widget class="QLabel" name="reviewsTitle">
+                        <property name="text">
+                          <string>Отзывы о врачах</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-weight: 750; font-size: 20px;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QLabel" name="reviewsHint">
+                        <property name="text">
+                          <string>Отзывы пациентов и обращения на модерацию.</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>color: #70879B;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QTableWidget" name="reviews" />
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="reviewsActions">
+                        <property name="spacing">
+                          <number>8</number>
+                        </property>
+                        <item>
+                          <widget class="QPushButton" name="complain">
+                            <property name="text">
+                              <string>Пожаловаться</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="moderate">
+                            <property name="text">
+                              <string>Рассмотреть жалобу</string>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                  </layout>
+                </widget>
+                <widget class="QWidget" name="pageDoctors">
+                  <layout class="QVBoxLayout" name="doctorsLayout">
+                    <property name="leftMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="topMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="rightMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="bottomMargin">
+                      <number>4</number>
+                    </property>
+                    <property name="spacing">
+                      <number>13</number>
+                    </property>
+                    <item>
+                      <widget class="QLabel" name="doctorsTitle">
+                        <property name="text">
+                          <string>Сотрудники и специальности</string>
+                        </property>
+                        <property name="styleSheet">
+                          <string>font-weight: 750; font-size: 20px;</string>
+                        </property>
+                      </widget>
+                    </item>
+                    <item>
+                      <widget class="QTableWidget" name="doctorsTable" />
+                    </item>
+                    <item>
+                      <layout class="QHBoxLayout" name="doctorsActions">
+                        <property name="spacing">
+                          <number>8</number>
+                        </property>
+                        <item>
+                          <widget class="QPushButton" name="addDoctor">
+                            <property name="text">
+                              <string>+ Врач</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="editDoctor">
+                            <property name="text">
+                              <string>Изменить</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="removeDoctor">
+                            <property name="text">
+                              <string>Удалить</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="addSpecialization">
+                            <property name="text">
+                              <string>+ Специальность</string>
+                            </property>
+                          </widget>
+                        </item>
+                        <item>
+                          <widget class="QPushButton" name="stats">
+                            <property name="text">
+                              <string>Статистика</string>
+                            </property>
+                          </widget>
+                        </item>
+                      </layout>
+                    </item>
+                  </layout>
+                </widget>
+              </widget>
+            </item>
+          </layout>
+        </widget>
+      </item>
+    </layout>
+  </widget>
+  <resources />
+  <connections />
+</ui>

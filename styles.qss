@@ -1,0 +1,91 @@
+QWidget {
+    font-family: "Segoe UI", "Arial";
+    font-size: 13px;
+    background: #F5F8FB;
+    color: #213B50;
+}
+QLabel {
+    background: transparent;
+}
+QPushButton {
+    color: white;
+    background: #207FA9;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    min-height: 20px;
+    font-weight: 600;
+}
+QPushButton:hover { background: #17688E; }
+QPushButton:pressed { background: #104F70; }
+QPushButton:disabled { background: #B0C4D2; color: #EDF2F6; }
+QFrame#sidebar QPushButton {
+    text-align: left;
+    color: #D9EAF4;
+    background: transparent;
+    border: 1px solid transparent;
+    padding-left: 14px;
+}
+QFrame#sidebar QPushButton:hover {
+    background: #245774;
+}
+QFrame#sidebar QPushButton[selected="true"] {
+    background: #306A88;
+    color: white;
+    border-left: 4px solid #8DDED4;
+}
+QFrame#sidebar QPushButton#switch {
+    background: #2D5872;
+    text-align: center;
+}
+QFrame#sidebar QPushButton#changePassword {
+    color: #D2E6F2;
+    border: 1px solid #48748A;
+    text-align: center;
+}
+QLineEdit, QTextEdit, QComboBox, QTableWidget, QCalendarWidget {
+    background: white;
+    border: 1px solid #D5E1EA;
+    border-radius: 8px;
+    padding: 7px;
+    selection-background-color: #C9EAF7;
+    selection-color: #1B3F57;
+}
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+    border: 1px solid #2486B5;
+}
+QTableWidget {
+    gridline-color: #EDF1F5;
+    alternate-background-color: #F8FBFD;
+}
+QHeaderView::section {
+    background: #EAF2F8;
+    color: #38576D;
+    border: none;
+    border-bottom: 1px solid #CEDCE7;
+    padding: 10px;
+    font-weight: 700;
+}
+QStackedWidget { background: transparent; }
+QCheckBox { spacing: 8px; }
+QCheckBox::indicator { width: 16px; height: 16px; }
+QMessageBox QLabel { font-size: 13px; }
+
+QLabel#login_error, QLabel#password_error, QLabel#name_error, QLabel#phone_error, QLabel#form_error {
+    color: #C42B38;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 0px;
+}
+QLineEdit[invalid="true"] {
+    border: 1px solid #D23C47;
+    background-color: #FFF7F7;
+}
+QPushButton#generatePassword, QPushButton#copyPassword, QPushButton#back {
+    background-color: #E6F0F7;
+    color: #17688E;
+    border: 1px solid #B9D4E5;
+}
+QPushButton#generatePassword:hover, QPushButton#copyPassword:hover, QPushButton#back:hover {
+    background-color: #D4E9F5;
+}
