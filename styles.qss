@@ -54,6 +54,31 @@ QLineEdit, QTextEdit, QComboBox, QTableWidget, QCalendarWidget {
 QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
     border: 1px solid #2486B5;
 }
+
+/* Аккуратная стрелка выпадающих списков */
+QComboBox {
+    padding-right: 34px;
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left: 1px solid #E3ECF2;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: #F8FBFD;
+}
+QComboBox::drop-down:hover {
+    background: #EAF3F8;
+}
+QComboBox::down-arrow {
+    image: url(__CHEVRON_URL__);
+    width: 12px;
+    height: 8px;
+}
+QComboBox:on::down-arrow {
+    top: 1px;
+}
 QTableWidget {
     gridline-color: #EDF1F5;
     alternate-background-color: #F8FBFD;
@@ -88,4 +113,67 @@ QPushButton#generatePassword, QPushButton#copyPassword, QPushButton#back {
 }
 QPushButton#generatePassword:hover, QPushButton#copyPassword:hover, QPushButton#back:hover {
     background-color: #D4E9F5;
+}
+
+
+/* Небольшая доводка интерфейса без смены общего дизайна */
+QTableWidget {
+    border: 1px solid #D5E1EA;
+    border-radius: 8px;
+    padding: 0px;
+}
+QTableWidget::item {
+    padding: 6px;
+    border-bottom: 1px solid #EEF3F7;
+}
+QTableWidget::item:selected {
+    background: #DCEFF8;
+    color: #17384F;
+}
+
+QCalendarWidget {
+    padding: 4px;
+}
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background: #EAF2F8;
+    border-bottom: 1px solid #D5E1EA;
+}
+QCalendarWidget QToolButton {
+    color: #244C65;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-weight: 600;
+}
+QCalendarWidget QToolButton:hover {
+    background: #D8EAF4;
+}
+QCalendarWidget QAbstractItemView {
+    background: white;
+    selection-background-color: #2486B5;
+    selection-color: white;
+    outline: 0;
+}
+
+QGroupBox {
+    background: white;
+    border: 1px solid #D5E1EA;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 4px;
+    color: #38576D;
+}
+
+QToolTip {
+    background: #213B50;
+    color: white;
+    border: none;
+    padding: 5px 7px;
 }

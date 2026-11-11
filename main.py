@@ -11,8 +11,12 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Поликлиника")
     app.setStyle("Fusion")
-    style = Path(__file__).resolve().parent / "styles.qss"
-    app.setStyleSheet(style.read_text(encoding="utf-8"))
+    base_dir = Path(__file__).resolve().parent
+    style = base_dir / "styles.qss"
+    style_text = style.read_text(encoding="utf-8")
+    chevron = (base_dir / "assets" / "chevron-down.svg").as_posix()
+    style_text = style_text.replace("__CHEVRON_URL__", chevron)
+    app.setStyleSheet(style_text)
     try:
         controller = ClinicApplication()
     except Exception as error:

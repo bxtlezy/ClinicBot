@@ -271,7 +271,7 @@
                     <item>
                       <widget class="QLabel" name="overviewHint">
                         <property name="text">
-                          <string>Здесь отображаются ваши текущие показатели и быстрые действия.</string>
+                          <string>Карточки показателей кликабельны: записи открывают список приёмов, отзывы — раздел отзывов.</string>
                         </property>
                         <property name="styleSheet">
                           <string>color: #667F91;</string>

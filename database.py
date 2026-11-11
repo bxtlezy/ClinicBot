@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from pathlib import Path
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, String, Text, create_engine, event
+from sqlalchemy import Boolean, DateTime, Index, Integer, String, Text, create_engine, event, text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
 BASE = Path(__file__).resolve().parent
@@ -33,9 +33,12 @@ class LoginSession(AccountsBase):
     __tablename__ = "sessions"
 
     token_hash: Mapped[str] = mapped_column(String(64), primary_key=True)
-    user_login: Mapped[str] = mapped_column(ForeignKey("users.login", ondelete="CASCADE"), index=True)
+    user_login: Mapped[str] = mapped_column(String(80), index=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=lambda: datetime.now(timezone.utc).replace(tzinfo=None),
+    )
 
 
 class Appointment(ClinicBase):
@@ -65,6 +68,41 @@ Index(
     unique=True,
     sqlite_where=Appointment.status != "cancelled",
 )
+
+
+class AppointmentEvent(ClinicBase):
+    __tablename__ = "appointment_events"
+
+    id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    appointment_id: Mapped[str] = mapped_column(String(40), index=True)
+    event_type: Mapped[str] = mapped_column(String(40), index=True)
+    message: Mapped[str] = mapped_column(Text, default="")
+    actor_login: Mapped[str] = mapped_column(String(80), default="")
+    actor_name: Mapped[str] = mapped_column(String(200), default="")
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=lambda: datetime.now(timezone.utc).replace(tzinfo=None),
+        index=True,
+    )
+
+
+class DoctorSchedule(ClinicBase):
+    __tablename__ = "doctor_schedules"
+
+    doctor_login: Mapped[str] = mapped_column(String(80), primary_key=True)
+    work_days: Mapped[str] = mapped_column(String(30), default="0,1,2,3,4")
+    start_time: Mapped[str] = mapped_column(String(5), default="09:00")
+    end_time: Mapped[str] = mapped_column(String(5), default="20:00")
+    slot_minutes: Mapped[int] = mapped_column(Integer, default=60)
+    break_start: Mapped[str] = mapped_column(String(5), default="13:00")
+    break_end: Mapped[str] = mapped_column(String(5), default="14:00")
+
+
+class DoctorDayOff(ClinicBase):
+    __tablename__ = "doctor_days_off"
+
+    doctor_login: Mapped[str] = mapped_column(String(80), primary_key=True)
+    day: Mapped[str] = mapped_column(String(10), primary_key=True)
 
 
 class Review(ClinicBase):
@@ -110,6 +148,12 @@ class Database:
         ClinicBase.metadata.create_all(self.clinic_engine)
         self.accounts = sessionmaker(self.accounts_engine, expire_on_commit=False)
         self.clinic = sessionmaker(self.clinic_engine, expire_on_commit=False)
+        self._migrate_legacy_roles()
+
+    def _migrate_legacy_roles(self):
+        """Keep existing installations compatible after registrator -> admin rename."""
+        with self.accounts_engine.begin() as connection:
+            connection.execute(text("UPDATE users SET role='admin' WHERE role='registrator'"))
 
     def close(self):
         self.accounts_engine.dispose()

@@ -23,7 +23,6 @@
     <item><widget class="QPushButton" name="generatePassword"><property name="text"><string>Сгенерировать надёжный пароль</string></property></widget></item>
     <item><widget class="QPushButton" name="copyPassword"><property name="text"><string>Копировать</string></property></widget></item>
    </layout></item>
-   <item><widget class="QCheckBox" name="showPassword"><property name="text"><string>Показать пароль</string></property></widget></item>
    <item><widget class="QLabel" name="password_hint"><property name="text"><string>Сохраните пароль: он понадобится для следующих входов.</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>color: #687E90; font-size: 11px;</string></property></widget></item>
    <item><widget class="QLabel" name="name_caption"><property name="text"><string>ФИО *</string></property></widget></item>
    <item><widget class="QLineEdit" name="name"><property name="placeholderText"><string>Фамилия, имя, отчество</string></property><property name="minimumSize"><size><width>0</width><height>38</height></size></property></widget></item>
